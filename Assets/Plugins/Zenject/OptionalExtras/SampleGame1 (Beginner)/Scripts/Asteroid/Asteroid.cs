@@ -24,14 +24,14 @@ namespace Zenject.Asteroids
 
         public Vector3 Position
         {
-            get { return transform.position; }
-            set { transform.position = value; }
+            get => transform.position;
+            set => transform.position = value;
         }
 
         public float Mass
         {
-            get { return _rigidBody.mass; }
-            set { _rigidBody.mass = value; }
+            get => _rigidBody.mass;
+            set => _rigidBody.mass = value;
         }
 
         public float Scale
@@ -53,8 +53,8 @@ namespace Zenject.Asteroids
 
         public Vector3 Velocity
         {
-            get { return _rigidBody.velocity; }
-            set { _rigidBody.velocity = value; }
+            get => _rigidBody.velocity;
+            set => _rigidBody.velocity = value;
         }
 
         public void FixedTick()
@@ -69,10 +69,8 @@ namespace Zenject.Asteroids
             }
         }
 
-        public void Tick()
-        {
+        public void Tick() => 
             CheckForTeleport();
-        }
 
         void CheckForTeleport()
         {
@@ -96,10 +94,8 @@ namespace Zenject.Asteroids
             transform.RotateAround(transform.position, Vector3.up, 30 * Time.deltaTime);
         }
 
-        bool IsMovingInDirection(Vector3 dir)
-        {
-            return Vector3.Dot(dir, _rigidBody.velocity) > 0;
-        }
+        bool IsMovingInDirection(Vector3 dir) =>
+            Vector3.Dot(dir, _rigidBody.velocity) > 0;
 
         [Serializable]
         public class Settings

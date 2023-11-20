@@ -16,7 +16,9 @@ namespace Zenject
         InjectContext _injectContext;
 
         [Inject]
+#pragma warning disable IDE0051 // Remove unused private members
         void Construct(IProvider provider, InjectContext injectContext)
+#pragma warning restore IDE0051 // Remove unused private members
         {
             Assert.IsNotNull(provider);
             Assert.IsNotNull(injectContext);

@@ -4,7 +4,7 @@ namespace Zenject.SpaceFighter
 {
     public class LevelBoundary
     {
-        readonly Camera _camera;
+        private readonly Camera _camera;
 
         public LevelBoundary(Camera camera)
         {

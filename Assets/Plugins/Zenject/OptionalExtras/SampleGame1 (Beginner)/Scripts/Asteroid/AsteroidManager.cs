@@ -9,18 +9,17 @@ namespace Zenject.Asteroids
 {
     public class AsteroidManager : ITickable, IFixedTickable
     {
-        readonly List<Asteroid> _asteroids = new List<Asteroid>();
-        readonly Queue<AsteroidAttributes> _cachedAttributes = new Queue<AsteroidAttributes>();
-        readonly Settings _settings;
-        readonly Asteroid.Factory _asteroidFactory;
-        readonly LevelHelper _level;
-
-        float _timeToNextSpawn;
-        float _timeIntervalBetweenSpawns;
-        bool _started;
+        private readonly List<Asteroid> _asteroids = new List<Asteroid>();
+        private readonly Queue<AsteroidAttributes> _cachedAttributes = new Queue<AsteroidAttributes>();
+        private readonly Settings _settings;
+        private readonly Asteroid.Factory _asteroidFactory;
+        private readonly LevelHelper _level;
+        private float _timeToNextSpawn;
+        private readonly float _timeIntervalBetweenSpawns;
+        private bool _started;
 
         [InjectOptional]
-        bool _autoSpawn = true;
+        private readonly bool _autoSpawn = true;
 
         public AsteroidManager(
             Settings settings, Asteroid.Factory asteroidFactory, LevelHelper level)
@@ -32,10 +31,8 @@ namespace Zenject.Asteroids
             _level = level;
         }
 
-        public IEnumerable<Asteroid> Asteroids
-        {
-            get { return _asteroids; }
-        }
+        public IEnumerable<Asteroid> Asteroids => 
+            _asteroids;
 
         public void Start()
         {

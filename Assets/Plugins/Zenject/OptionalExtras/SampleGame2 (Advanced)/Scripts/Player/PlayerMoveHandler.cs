@@ -67,12 +67,12 @@ namespace Zenject.SpaceFighter
             if (extentLeft > 0)
             {
                 _player.AddForce(
-                    Vector3.right * _settings.BoundaryAdjustForce * extentLeft);
+                    _settings.BoundaryAdjustForce * extentLeft * Vector3.right);
             }
             else if (extentRight > 0)
             {
                 _player.AddForce(
-                    Vector3.left * _settings.BoundaryAdjustForce * extentRight);
+                    _settings.BoundaryAdjustForce * extentRight * Vector3.left);
             }
 
             var extentTop = _player.Position.y - (_levelBoundary.Top - _settings.BoundaryBuffer);
@@ -81,12 +81,12 @@ namespace Zenject.SpaceFighter
             if (extentTop > 0)
             {
                 _player.AddForce(
-                    Vector3.down * _settings.BoundaryAdjustForce * extentTop);
+                    _settings.BoundaryAdjustForce * extentTop * Vector3.down);
             }
             else if (extentBottom > 0)
             {
                 _player.AddForce(
-                    Vector3.up * _settings.BoundaryAdjustForce * extentBottom);
+                    _settings.BoundaryAdjustForce * extentBottom * Vector3.up);
             }
         }
 

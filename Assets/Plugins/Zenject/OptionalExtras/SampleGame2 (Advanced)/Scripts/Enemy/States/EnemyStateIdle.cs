@@ -39,7 +39,7 @@ namespace Zenject.SpaceFighter
         {
             _theta += Time.deltaTime * _settings.Frequency;
 
-            _view.Position = _startPos + _view.RightDir * _settings.Amplitude * Mathf.Sin(_theta);
+            _view.Position = _startPos + _settings.Amplitude * Mathf.Sin(_theta) * _view.RightDir;
 
             _rotationHandler.DesiredLookDir = _startLookDir;
         }

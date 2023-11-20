@@ -38,8 +38,7 @@ namespace Zenject.Asteroids
             _explosion.transform.position = _ship.Position;
 
             _shipBroken = _brokenShipFactory.Create().gameObject;
-            _shipBroken.transform.position = _ship.Position;
-            _shipBroken.transform.rotation = _ship.Rotation;
+            _shipBroken.transform.SetPositionAndRotation(_ship.Position, _ship.Rotation);
 
             foreach (var rigidBody in _shipBroken.GetComponentsInChildren<Rigidbody>())
             {

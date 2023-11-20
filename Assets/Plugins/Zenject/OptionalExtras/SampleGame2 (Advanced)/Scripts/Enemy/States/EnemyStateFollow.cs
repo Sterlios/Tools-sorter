@@ -83,11 +83,11 @@ namespace Zenject.SpaceFighter
             // Strafe to avoid getting hit too easily
             if (_strafeRight)
             {
-                _view.AddForce(_view.RightDir * _settings.StrafeMultiplier * _tunables.Speed);
+                _view.AddForce(_settings.StrafeMultiplier * _tunables.Speed * _view.RightDir);
             }
             else
             {
-                _view.AddForce(-_view.RightDir * _settings.StrafeMultiplier * _tunables.Speed);
+                _view.AddForce(_settings.StrafeMultiplier * _tunables.Speed * -_view.RightDir);
             }
         }
 

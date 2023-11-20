@@ -59,7 +59,7 @@ namespace Zenject.SpaceFighter
 
         public void Update()
         {
-            transform.position -= transform.right * _speed * Time.deltaTime;
+            transform.position -= _speed * Time.deltaTime * transform.right;
 
             if (Time.realtimeSinceStartup - _startTime > _lifeTime)
             {
