@@ -1,5 +1,5 @@
-using System;
 using ModestTree;
+using System;
 using UnityEngine;
 
 namespace Zenject.Asteroids
@@ -69,7 +69,7 @@ namespace Zenject.Asteroids
             }
         }
 
-        public void Tick() => 
+        public void Tick() =>
             CheckForTeleport();
 
         void CheckForTeleport()

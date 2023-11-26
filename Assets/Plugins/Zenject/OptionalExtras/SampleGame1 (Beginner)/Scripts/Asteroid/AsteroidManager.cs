@@ -1,7 +1,7 @@
+using ModestTree;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using ModestTree;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -31,7 +31,7 @@ namespace Zenject.Asteroids
             _level = level;
         }
 
-        public IEnumerable<Asteroid> Asteroids => 
+        public IEnumerable<Asteroid> Asteroids =>
             _asteroids;
 
         public void Start()
@@ -64,7 +64,8 @@ namespace Zenject.Asteroids
                 var sizePx = Random.Range(0.0f, 1.0f);
                 var speed = Random.Range(_settings.minSpeed, _settings.maxSpeed);
 
-                _cachedAttributes.Enqueue(new AsteroidAttributes {
+                _cachedAttributes.Enqueue(new AsteroidAttributes
+                {
                     SizePx = sizePx,
                     InitialSpeed = speed
                 });
@@ -164,21 +165,21 @@ namespace Zenject.Asteroids
             switch (side)
             {
                 case Side.Top:
-                {
-                    return new Vector3(_level.Left + rand * _level.Width, _level.Top + scale, 0);
-                }
+                    {
+                        return new Vector3(_level.Left + rand * _level.Width, _level.Top + scale, 0);
+                    }
                 case Side.Bottom:
-                {
-                    return new Vector3(_level.Left + rand * _level.Width, _level.Bottom - scale, 0);
-                }
+                    {
+                        return new Vector3(_level.Left + rand * _level.Width, _level.Bottom - scale, 0);
+                    }
                 case Side.Right:
-                {
-                    return new Vector3(_level.Right + scale, _level.Bottom + rand * _level.Height, 0);
-                }
+                    {
+                        return new Vector3(_level.Right + scale, _level.Bottom + rand * _level.Height, 0);
+                    }
                 case Side.Left:
-                {
-                    return new Vector3(_level.Left - scale, _level.Bottom + rand * _level.Height, 0);
-                }
+                    {
+                        return new Vector3(_level.Left - scale, _level.Bottom + rand * _level.Height, 0);
+                    }
             }
 
             throw Assert.CreateException();
