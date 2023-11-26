@@ -1,3 +1,4 @@
+using Infrastructure.StateMachine.Factory;
 using UnityEngine;
 
 namespace Infrastructure
@@ -8,9 +9,9 @@ namespace Infrastructure
         {
             DontDestroyOnLoad(this);
 
-            var game = new Game();
-
-            game.Run();
+            var gameFactory = new GameFactory();
+            var game = gameFactory.Create();
+            
         }
     }
 }

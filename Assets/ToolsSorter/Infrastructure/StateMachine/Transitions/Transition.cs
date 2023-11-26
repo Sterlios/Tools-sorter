@@ -1,6 +1,7 @@
-﻿using System;
+﻿using Infrastructure.StateMachine.States;
+using System;
 
-namespace Infrastructure
+namespace Infrastructure.StateMachine.Transitions
 {
     internal abstract class Transition
     {
