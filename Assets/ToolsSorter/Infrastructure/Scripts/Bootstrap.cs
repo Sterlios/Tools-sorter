@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class Bootstrap : MonoBehaviour
+namespace ToolsSorter.Infrastructure
 {
-    private void Awake()
+    public class Bootstrap : MonoBehaviour
     {
-        DontDestroyOnLoad(this);
+        private void Awake() => 
+            DontDestroyOnLoad(this);
     }
 }
