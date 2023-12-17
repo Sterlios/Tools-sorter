@@ -11,11 +11,8 @@ namespace ToolsSorter.Service.CollideService
 
         public event Action Losed;
 
-        private void OnEnable()
-        {
-            Debug.Log(_thrower);
+        private void OnEnable() => 
             _thrower.Thrown += OnThrown;
-        }
 
         private void OnDisable() =>
             _thrower.Thrown -= OnThrown;
