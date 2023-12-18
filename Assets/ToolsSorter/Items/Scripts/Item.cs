@@ -40,9 +40,6 @@ namespace ToolsSorter.Items
             _movement.MoveForward();
         }
 
-        public void Stop() =>
-            _movement.Stop();
-
         public void SetParent(Transform transform) => 
             _transform.SetParent(transform);
 
@@ -66,5 +63,8 @@ namespace ToolsSorter.Items
 
         public void Deactivate() =>
             gameObject.Deactivate();
+
+        private void Stop() =>
+            _movement.Stop();
     }
 }
