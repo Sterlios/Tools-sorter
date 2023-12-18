@@ -13,6 +13,6 @@ namespace ToolsSorter.Wheel
             Transform = transform;
 
         private void Update() => 
-            Transform.Rotate(_speed * Time.fixedDeltaTime * Vector3.up);
+            Transform.Rotate(_speed * Time.deltaTime * Vector3.up);
     }
 }
