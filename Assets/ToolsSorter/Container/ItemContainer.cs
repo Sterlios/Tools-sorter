@@ -24,14 +24,17 @@ namespace ToolsSorter.Container
             }
         }
 
-        public bool TryGetItem(out IHolded item)
+        public bool TryGetItem(out IHolded holded)
         {
-            item = null;
+            holded = null;
 
             if (_items.Count > 0)
             {
-                item = _items[0];
-                _items.RemoveAt(0);
+                int nextItemIndex = 0;
+
+                holded = _items[nextItemIndex];
+                _items.RemoveAt(nextItemIndex);
+
                 return true;
             }
 
