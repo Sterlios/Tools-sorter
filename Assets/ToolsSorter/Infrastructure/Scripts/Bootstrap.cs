@@ -8,7 +8,7 @@ namespace ToolsSorter.Infrastructure
         {
             DontDestroyOnLoad(this);
 
-            Game game = new Game();
+            var game = new Game();
             game.Start();
         } 
     }
