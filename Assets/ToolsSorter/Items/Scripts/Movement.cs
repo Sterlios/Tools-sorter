@@ -18,11 +18,11 @@ namespace ToolsSorter.Items
             if(speed <= 0)
                 throw new ArgumentOutOfRangeException(nameof(speed));
 
-            _waitForFixedUpdate = new WaitForFixedUpdate();
             _speed = speed;
             _transform = transform != null ? transform : throw new ArgumentNullException(nameof(transform));
             _rigidbody = rigidbody != null ? rigidbody : throw new ArgumentNullException(nameof(rigidbody));
             _coroutineRunner = coroutineRunner ?? throw new ArgumentNullException(nameof(coroutineRunner));
+            _waitForFixedUpdate = new WaitForFixedUpdate();
         }
 
         public void MoveForward()

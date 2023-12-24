@@ -12,17 +12,20 @@ namespace ToolsSorter.Container
 
         private List<Item> _items;
 
-        private void Awake()
-        {
-            _items = new List<Item>();
+        //private void Awake()
+        //{
+        //    _items = new List<Item>();
 
-            for (int i = 0; i < _count; i++)
-            {
-                Item item = Instantiate(_itemTemplate, transform);
-                item.Deactivate();
-                _items.Add(item);
-            }
-        }
+        //    for (int i = 0; i < _count; i++)
+        //    {
+        //        Item item = Instantiate(_itemTemplate, transform);
+        //        item.Deactivate();
+        //        _items.Add(item);
+        //    }
+        //}
+
+        public void Init(List<Item> items) => 
+            _items = items ?? throw new System.ArgumentNullException(nameof(items));
 
         public bool TryGetItem(out IHolded holded)
         {

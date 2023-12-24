@@ -7,6 +7,7 @@ using UnityEngine;
 
 namespace ToolsSorter.Items
 {
+    [RequireComponent(typeof(BoxCollider))]
     [RequireComponent(typeof(Rigidbody))]
     public class Item : MonoBehaviour, ICoroutineRunner, ICollided, IThrown, IHolded
     {
@@ -14,11 +15,15 @@ namespace ToolsSorter.Items
 
         private Transform _transform;
         private Movement _movement;
+        private BoxCollider _collider;
 
         public event Action<ICollided, Collision> Collided;
 
+        public float Width => _collider.size.x;
+
         private void Awake()
         {
+            _collider = GetComponent<BoxCollider>();
             _transform = transform;
             _movement = new Movement(_speed, GetComponent<Rigidbody>(), _transform, this);
         }

@@ -1,8 +1,6 @@
-using UnityEngine;
-
 namespace ToolsSorter.UI
 {
-    public class LoseWindow : MonoBehaviour
+    public class LoseWindow : Window
     {
     }
 }

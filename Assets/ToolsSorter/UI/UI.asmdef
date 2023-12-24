@@ -1,7 +1,9 @@
 {
     "name": "UI",
     "rootNamespace": "ToolsSorter.UI",
-    "references": [],
+    "references": [
+        "GUID:84f01a6557685a14487eecbe4ba0b17c"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

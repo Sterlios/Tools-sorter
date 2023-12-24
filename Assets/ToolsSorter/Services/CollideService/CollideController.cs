@@ -5,17 +5,19 @@ using Zenject;
 
 namespace ToolsSorter.Service.CollideService
 {
-    public class CollideController : MonoBehaviour
+    public class CollideController : IDisposable
     {
         [Inject] private readonly Thrower _thrower;
 
+        public float SlowdownSeconds { get; } = 2;
+
         public event Action Losed;
 
-        private void OnEnable() => 
+        public CollideController(Thrower thrower)
+        {
+            _thrower = thrower ?? throw new ArgumentNullException(nameof(thrower));
             _thrower.Thrown += OnThrown;
-
-        private void OnDisable() =>
-            _thrower.Thrown -= OnThrown;
+        }
 
         private void OnThrown(IThrown thrown)
         {
@@ -46,5 +48,8 @@ namespace ToolsSorter.Service.CollideService
 
             Losed?.Invoke();
         }
+
+        public void Dispose() =>
+            _thrower.Thrown -= OnThrown;
     }
 }
